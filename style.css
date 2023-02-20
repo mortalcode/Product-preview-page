@@ -1,0 +1,172 @@
+/* Rest properties imported  */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* ------------------------------------------------------ */
+
+:root{
+    /* Custom Properties  */
+--cyan: hsl(158, 36%, 37%);
+--Dark-cyan: hsl(158, 36%, 20%);
+--Cream: hsl(30, 38%, 92%);
+--Very-dark-blue: hsl(212, 21%, 14%);
+--Dark-grayish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+--main-font: Montserrat , san sarif ;
+--secondary-font: Fraunces, san sarif ;
+--content-padding: 1rem;
+
+}
+
+
+/* Page body */
+body{
+   font-size: 0.825rem;
+   display: grid;
+   place-content: center;
+   background-color: var(--Cream);
+   color: var(--Dark-grayish-blue);
+   line-height: 1;
+
+   /* Display */
+   display: grid;
+   place-content: center;
+   margin: 1rem;
+
+}
+
+/* Main Content */
+.product{
+    display: grid;
+    gap: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background-color: var(--White);
+    overflow: hidden;
+    min-width: 375px;
+    max-width: 600px;
+
+    /* In project Custom Property  */
+    --content-padding: 1.5rem;
+    --content-gaps: 1rem;
+}
+@media (min-width:600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*Product Content*/
+.product__content{
+    padding: var(--content-padding);
+    display:grid;
+    gap: var(--content-gaps);
+}
+
+.product__title{
+    font-family: var(--secondary-font);
+    font-size: 1.3rem;
+    color: var(--Very-dark-blue);
+}
+ 
+.product__category{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8125rem;
+    font-family: var(--main-font);
+
+}
+
+.product__description{
+    font-family: var(--main-font);
+    font-size: 0.88rem;
+    line-height: 1.6rem;
+}
+
+/* Price Details  */
+#price-details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--main-font);
+}
+#product__price{
+    font-family: var(--secondary-font);
+    font-size: 2rem;
+    color: var(--cyan);
+}
+
+.button{
+    padding: 1rem;
+    font-family: var(--main-font);
+    font-weight: 700;
+    border: 0;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: var(--cyan);
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:is(:hover, :focus){
+    background-color: var(--Dark-cyan);
+}
+
+/* Footer  */
+.attribution{
+    font-family: var(--main-font);
+}
